@@ -27,22 +27,25 @@
       var deferred = $q.defer();
       n = Number(n);
       if (n >= 0 && n < UPPER_LIMIT) {
-        deferred.resolve({
-          num: fibonacci(n),
-          nth: n
+        fibonacci(n, function(result) {
+          deferred.resolve({
+            num: result,
+            nth: n
+          });
         });
       } else {
         console.log('fibService.calculateFib(' + n + ') is invalid');
         deferred.reject('fibService.calculateFib(' + n + ') is invalid');
       }
       return deferred.promise;
-    };
+    }
 
-  };
+  }
 
-  function fibonacci(n) {
+  function fibonacci(n, callback) {
     var memo = {};
-    return _fibonacci(n);
+    var result = _fibonacci(n);
+    callback(result);
 
     function memoize(n, val) {
       var index = 'fib' + n;

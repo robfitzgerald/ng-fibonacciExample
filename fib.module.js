@@ -5,39 +5,39 @@
     .config(function ($stateProvider) {
       $stateProvider
         .state('route1', {
-          url: '/fib4',
+          url: '/fib5',
           templateUrl: 'content.html',
           controller: 'fibController',
           controllerAs: 'ctrl',
           resolve: {
-            fibValue: fib4
+            fibValue: fib5
           }
         })
         .state('route2', {
-          url: '/fib10',
+          url: '/fib15',
           templateUrl: 'content.html',
           controller: 'fibController',
           controllerAs: 'ctrl',
           resolve: {
-            fibValue: fib10
+            fibValue: fib15
           }
         })
         .state('route3', {
+          url: '/fib30',
+          templateUrl: 'content.html',
+          controller: 'fibController',
+          controllerAs: 'ctrl',
+          resolve: {
+            fibValue: fib30
+          }
+        })
+        .state('route4', {
           url: '/fib50',
           templateUrl: 'content.html',
           controller: 'fibController',
           controllerAs: 'ctrl',
           resolve: {
             fibValue: fib50
-          }
-        })
-        .state('route4', {
-          url: '/fib200',
-          templateUrl: 'content.html',
-          controller: 'fibController',
-          controllerAs: 'ctrl',
-          resolve: {
-            fibValue: fib200
           }
         })
         .state('restVersion', {
@@ -51,20 +51,20 @@
         })
     });
 
-  function fib4 (fibService) {
-    return fibService.calculateFib(4);
+  function fib5 (fibService) {
+    return fibService.calculateFib(5);
   }
 
-  function fib10 (fibService) {
-    return fibService.calculateFib(10);
+  function fib15 (fibService) {
+    return fibService.calculateFib(15);
+  }
+
+  function fib30 (fibService) {
+    return fibService.calculateFib(30);
   }
 
   function fib50 (fibService) {
     return fibService.calculateFib(50);
-  }
-
-  function fib200 (fibService) {
-    return fibService.calculateFib(200);
   }
 
   function fibN (fibService, $stateParams) {
