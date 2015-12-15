@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitzgerald Artificial Intelligence Project 2</title>
+    <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-app="fib.module">
+<p class="center-align">for any n value, enter url #/fib/n</p>
+<h6 class="center-align">An example Angular site displaying Fibonacci Values using resolve, routing, and promises via a memoized Fibonacci Factory provider</h6>
+<div class="container">
+    <nav class="row">
+        <a class="col s3 m3 l3 center-align" ui-sref="route1">Fib 4</a>
+        <a class="col s3 m3 l3 center-align" ui-sref="route2">Fib 10</a>
+        <a class="col s3 m3 l3 center-align" ui-sref="route3">Fib 50</a>
+        <a class="col s3 m3 l3 center-align" ui-sref="route4">Fib 200</a>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row center-align grey lighten-5 blue-grey-text text-accent-2">
+        <div class="col s12 m12 l12" ui-view></div>
+    </div>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/Materialize/dist/js/materialize.js"></script>
+<script src="fib.module.js"></script>
+<script src="fib.service.js"></script>
+<script src="fib.controller.js"></script>
+</body>
+</html>
