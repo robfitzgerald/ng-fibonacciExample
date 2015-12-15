@@ -12,7 +12,17 @@
 
     return fibService;
 
-
+    /**
+     * @description calculates the nth fibonacci number using a memoized recursive function
+     * @param {Number} n a number from zero to UPPER_LIMIT
+     * @returns {Number,Number} tuple containing the fibonacci number requested and the resulting fibonacci value
+     * @example
+     * // resolved promise returns {num: 8, nth: 5}
+     * fibService.calculateFib(5).then(function(res) { console.log(res); });
+     * @example
+     * // will be rejected with the string 'fibService.calculateFib(-1) is invalid'
+     * var promise = fibService.calculateFib(-1)
+     */
     function calculateFib(n) {
       var deferred = $q.defer();
       n = Number(n);
