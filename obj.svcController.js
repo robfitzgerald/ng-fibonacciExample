@@ -1,44 +1,16 @@
-(function (){
-
+(function (){  
 angular.module('objApp')
-  .service ('Person', [Person]);
- 
-function Person (first, last, skills, background){
-  this.first = first;
-  this.last = last;
-  this.skills = skills;
-  this.background = background;
-};
+  .controller('svcCtrl', ['$mdSidenav', 'peopleFactory' ,svcCtrl]);
 
-angular.module('objApp')
-  .factory('testFactory', ['Person', testFactory]);
-
-    function testFactory(){
-    var factory = {
-      people: [],
-      addPerson: addPerson
-    };
-
-    function addPerson (first, last, skills, background){
-      var temp = new Person (first, last, skills, background);
-      factory.people.push(temp);
-    };
-
-    return factory;
-  };
-  
-angular.module('objApp')
-  .controller('svcCtrl', ['$mdSidenav', 'testFactory' ,svcCtrl]);
-
-  function svcCtrl($mdSidenav, testFactory) {
+  function svcCtrl($mdSidenav, peopleFactory) {
     var vm = this;
     vm.toggleRight = toggleRight;
 
     skills = ['nunchucks', 'drawing', 'fighting bears'];
     skillstwo = ['Government', 'Big Air'];
-    tf = testFactory;
-    tf.addPerson('Napoleon', 'Dynamite', skills, 'blue');
-    tf.addPerson( 'Vote For', 'Pedro', skillstwo, 'green');
+    pf = peopleFactory;
+    pf.addPerson('Napoleon', 'Dynamite', skills, 'blue');
+    pf.addPerson( 'Vote For', 'Pedro', skillstwo, 'green');
 
 
     var objlist = [
@@ -56,20 +28,17 @@ angular.module('objApp')
       }
     ];
 
-    console.log(tf.people);
+    console.log(pf.people);
     console.log(objlist);
-    if (angular.toJson(tf.people) == angular.toJson(objlist)) 
+    if (angular.toJson(pf.people) == angular.toJson(objlist)) 
       console.log('EQUAL');
     else
       console.log('NOT EQUAL');
 
-    vm.objlist = tf.people;
+    vm.objlist = pf.people;
     
     function toggleRight() {
       $mdSidenav('right').toggle();
     };
   };
-
-
-
 })();

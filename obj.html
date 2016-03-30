@@ -22,7 +22,15 @@
         </md-grid-list>
         <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
             <div ng-controller="sidenavCtrl as ctrl">
-               <p> {{ctrl.Data}}</p>
+                <div class="{{ninja.background}}" ng-repeat="ninja in ctrl.objlist">
+                    <md-grid-tile-header>
+                        <h2>{{ninja.last}}, {{ninja.first}}</h2>
+                    </md-grid-tile-header>
+                    <md-content layout="column">
+                        <h3>Skills</h3>
+                        <md-chips ng-model="ninja.skills" readonly="false"></md-chips>
+                    </md-content>
+                </div>
             </div>
         </md-sidenav>
     </div>
@@ -32,7 +40,9 @@
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
     <script src="obj.module.js"></script>
+    <script src="fac.peopleFactory.js"></script>
     <script src="obj.svcController.js"></script>
-    <script src="obj.sidenavCtrl.js"></script>
+    <script src="obj.sidenavController.js"></script>
+
 </body>
 </html>
