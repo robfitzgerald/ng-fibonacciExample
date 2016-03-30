@@ -2,8 +2,8 @@
 angular.module('objApp')
   .controller('sidenavCtrl', ['peopleFactory', sidenavCtrl]);
 
-  function sidenavCtrl (testFactory) {
-    tf = testFactory;
+  function sidenavCtrl (peopleFactory) {
+    tf = peopleFactory;
     var vm = this;
     this.objlist = tf.people;
   };

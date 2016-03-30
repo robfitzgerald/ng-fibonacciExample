@@ -10,9 +10,9 @@ angular.module('objApp')
   };
 
 angular.module('objApp')
-  .factory('peopleFactory', ['Person', testFactory]);
+  .factory('peopleFactory', ['Person', peopleFactory]);
 
-    function testFactory(){
+    function peopleFactory(){
     var factory = {
       people: [],
       addPerson: addPerson
