@@ -3,8 +3,8 @@ angular.module('objApp')
   .controller('sidenavCtrl', ['peopleFactory', sidenavCtrl]);
 
   function sidenavCtrl (peopleFactory) {
-    tf = peopleFactory;
+    pf = peopleFactory;
     var vm = this;
-    this.objlist = tf.people;
+    this.objlist = pf.people;
   };
 })();
