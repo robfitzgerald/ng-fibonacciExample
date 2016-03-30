@@ -1,11 +1,8 @@
-(function (){
-  angular.module('objApp')
-    .controller('sidenavCtrl', [sidenavCtrl]);
+angular.module('objApp')
+  .controller('sidenavCtrl', ['testFactory', sidenavCtrl]);
 
-  function sidenavCtrl() {
+  function sidenavCtrl (testFactory) {
+    tf = testFactory;
     var vm = this;
-    vm.hello = "string";   
-    //need vm.someobject to hold what is passed from other controller
-    //need to inject service into controller
+    this.Data = tf.people;
   };
-})();
