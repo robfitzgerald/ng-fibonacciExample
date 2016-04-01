@@ -16,13 +16,13 @@
                 <md-content layout="column">
                     <h3>Skills</h3>
                     <md-chips ng-model="ninja.skills" readonly="false"></md-chips>
-                    <md-button class="md-raised md-warn" ng-click="ctrl.toggleRight()" >Show Sidenav</md-button>
+                    <md-button class="md-raised md-warn" ng-click="ctrl.toggleRight(ninja)" >Show Sidenav</md-button>
                 </md-content>
             </md-grid-tile>
         </md-grid-list>
         <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
             <div ng-controller="sidenavCtrl as ctrl">
-               <p> {{ctrl.hello}}</p>
+                <h1>{{ctrl.selected.first}} {{ctrl.selected.last}}</h1>
             </div>
         </md-sidenav>
     </div>
@@ -34,6 +34,7 @@
     <script src="obj.module.js"></script>
     <script src="obj.svcController.js"></script>
     <script src="obj.sidenavCtrl.js"></script>
+    <script src="obj.factory.js"></script>
 
 </body>
 </html>

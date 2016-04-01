@@ -1,8 +1,8 @@
 (function (){
   angular.module('objApp')
-    .controller('svcCtrl', ['$mdSidenav', svcCtrl]);
+    .controller('svcCtrl', ['$mdSidenav', 'selectedObj', svcCtrl]);
 
-  function svcCtrl($mdSidenav) {
+  function svcCtrl($mdSidenav, selectedObj) {
     var vm = this;
     
     vm.toggleRight = toggleRight;
@@ -21,7 +21,9 @@
       }
     ];
     
-    function toggleRight() {
+    function toggleRight(obj) {
+      // notify the controller of the selected object
+      selectedObj.setSelected(obj);
       $mdSidenav('right').toggle();
     };
 
