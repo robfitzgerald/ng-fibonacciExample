@@ -11,16 +11,21 @@ angular.module('objApp')
 
 angular.module('objApp')
   .factory('peopleFactory', ['Person', peopleFactory]);
-
+    
     function peopleFactory(){
     var factory = {
       people: [],
-      addPerson: addPerson
+      addPerson: addPerson,
+      getPeople: getPeople
     };
 
     function addPerson (first, last, skills, background){
       var temp = new Person (first, last, skills, background);
       factory.people.push(temp);
+    };
+
+    function getPeople () {
+      return factory.people;
     };
 
     return factory;

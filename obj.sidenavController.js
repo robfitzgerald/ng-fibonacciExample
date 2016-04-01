@@ -5,6 +5,6 @@ angular.module('objApp')
   function sidenavCtrl (peopleFactory) {
     pf = peopleFactory;
     var vm = this;
-    this.objlist = pf.people;
+    this.objlist = pf.getPeople();
   };
 })();

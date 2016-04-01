@@ -30,12 +30,12 @@ angular.module('objApp')
 
     console.log(pf.people);
     console.log(objlist);
-    if (angular.toJson(pf.people) == angular.toJson(objlist)) 
+    if (angular.toJson(pf.getPeople()) === angular.toJson(objlist)) 
       console.log('EQUAL');
     else
       console.log('NOT EQUAL');
 
-    vm.objlist = pf.people;
+    vm.objlist = pf.getPeople();
     
     function toggleRight() {
       $mdSidenav('right').toggle();
