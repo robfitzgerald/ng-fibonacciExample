@@ -9,9 +9,6 @@ angular.module('objApp')
     skills = ['nunchucks', 'drawing', 'fighting bears'];
     skillstwo = ['Government', 'Big Air'];
     pf = peopleFactory;
-    pf.addPerson('Napoleon', 'Dynamite', skills, 'blue');
-    pf.addPerson( 'Vote For', 'Pedro', skillstwo, 'green');
-
 
     var objlist = [
       {
